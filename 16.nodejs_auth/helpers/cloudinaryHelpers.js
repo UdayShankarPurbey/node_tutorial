@@ -1,9 +1,9 @@
-const cloudinary = require('../config/cloudinary');
+const cloudinary = require('../config/cloudinary.js');
 
 const uploadToCloudinary =  async (filepath) => {
   try {
     const result = await cloudinary.uploader.upload(filepath);
-    console.log(result);
+    // console.log(result);
     return {
       url: result.secure_url,
       public_id: result.public_id,
