@@ -1,4 +1,5 @@
 import express , {Express , Response , Request , NextFunction} from 'express';
+import { IUser, User } from './models/user';
 
 const app : Express = express();
 
@@ -34,6 +35,16 @@ app.get('/user/:id' , (req : Request<{ id : string} , {} , user>, res : Response
   const { id } = req.params;
   res.json({ message: 'User fetched successfully', data : { id } });
 })
+
+app.get('/users' , async(req : Request, res : Response) => {
+  try {
+    const user : IUser[] = await User.find({});
+    res.json({ message: 'Users fetched successfully', data : user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });    
+  }
+});
 
 app.listen(port , () : void => {
   console.log(`Server is running at http://localhost:${port}`);
