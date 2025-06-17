@@ -1,0 +1,457 @@
+{
+	"info": {
+		"_postman_id": "3c55ae93-d1d1-44ba-a149-3ef82c4ade42",
+		"name": "15.bookStore_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30996747"
+	},
+	"item": [
+		{
+			"name": "Books",
+			"item": [
+				{
+					"name": "Add Books",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n//   { \"title\": \"The Silent Storm\", \"author\": \"Ella Barnes\", \"publicationYear\": \"2021\" },\r\n//   { \"title\": \"Whispers of the Past\", \"author\": \"Liam Jackson\", \"publicationYear\": \"2019\" },\r\n//   { \"title\": \"Beyond the Horizon\", \"author\": \"Maya Collins\", \"publicationYear\": \"2022\" },\r\n//   { \"title\": \"The Forgotten Path\", \"author\": \"Oliver Kent\", \"publicationYear\": \"2018\" },\r\n//   { \"title\": \"Under the Moonlit Sky\", \"author\": \"Sophia Wells\", \"publicationYear\": \"2020\" },\r\n//   { \"title\": \"The Edge of Tomorrow\", \"author\": \"Benjamin Ford\", \"publicationYear\": \"2023\" },\r\n//   { \"title\": \"Tales of the Lost City\", \"author\": \"Isabella Richards\", \"publicationYear\": \"2020\" },\r\n//   { \"title\": \"The Mirror's Truth\", \"author\": \"Lucas Patel\", \"publicationYear\": \"2021\" },\r\n//   { \"title\": \"Fading Lights\", \"author\": \"Ava Stone\", \"publicationYear\": \"2022\" },\r\n//   { \"title\": \"Rising Stars\", \"author\": \"Ethan Brooks\", \"publicationYear\": \"2024\" }\r\n//   { \"title\": \"The Silent Observer\", \"author\": \"Jane Doe\", \"publicationYear\": \"2015\" },\r\n//   { \"title\": \"Echoes of Tomorrow\", \"author\": \"John Smith\", \"publicationYear\": \"2020\" },\r\n//   { \"title\": \"Whispers in the Dark\", \"author\": \"Alice Johnson\", \"publicationYear\": \"2018\" },\r\n//   { \"title\": \"The Last Horizon\", \"author\": \"Michael Brown\", \"publicationYear\": \"2021\" },\r\n//   { \"title\": \"Beneath the Stars\", \"author\": \"Sarah White\", \"publicationYear\": \"2017\" },\r\n//   { \"title\": \"Fragments of Time\", \"author\": \"Robert Green\", \"publicationYear\": \"2019\" },\r\n//   { \"title\": \"Into the Abyss\", \"author\": \"Emily Clark\", \"publicationYear\": \"2022\" },\r\n//   { \"title\": \"Midnight Dreams\", \"author\": \"David Lee\", \"publicationYear\": \"2023\" },\r\n//   { \"title\": \"A Path Unseen\", \"author\": \"Olivia Martin\", \"publicationYear\": \"2020\" },\r\n  { \"title\": \"The Edge of Forever\", \"author\": \"Chris Thompson\", \"publicationYear\": \"2016\" }\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/books/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"books",
+								"add"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Add Books",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "  { \"title\": \"A Path Unseen\", \"author\": \"Olivia Martin\", \"publicationYear\": \"2020\" }\r\n\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/books/add",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"books",
+										"add"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "215"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d7-HtFOV1WdvkxBrWCWCmn6QIWuvP4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 Mar 2025 07:24:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Book created successfully\",\n    \"data\": {\n        \"title\": \"A Path Unseen\",\n        \"author\": \"Olivia Martin\",\n        \"publicationYear\": 2020,\n        \"_id\": \"67dbc29b29283150dd1e0175\",\n        \"createdAt\": \"2025-03-20T07:24:11.145Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Get All Books",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/books/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"books",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get All Books",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/books/get",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"books",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3320"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cf8-TGa7+eieRaujdZkbWPnvF5zDqBw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 Mar 2025 07:28:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"67dbc1f45761d0dc251053fe\",\n            \"title\": \"The Edge of Forever\",\n            \"author\": \"Chris Thompson\",\n            \"publicationYear\": 2016,\n            \"createdAt\": \"2025-03-20T07:21:24.916Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67dbc29b29283150dd1e0175\",\n            \"title\": \"A Path Unseen\",\n            \"author\": \"Olivia Martin\",\n            \"publicationYear\": 2020,\n            \"createdAt\": \"2025-03-20T07:24:11.145Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211d9b\",\n            \"title\": \"The Silent Observer\",\n            \"author\": \"Jane Doe\",\n            \"publicationYear\": 2015,\n            \"createdAt\": \"2025-03-20T07:28:17.620Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211d9c\",\n            \"title\": \"Echoes of Tomorrow\",\n            \"author\": \"John Smith\",\n            \"publicationYear\": 2020,\n            \"createdAt\": \"2025-03-20T07:28:17.620Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211d9d\",\n            \"title\": \"Whispers in the Dark\",\n            \"author\": \"Alice Johnson\",\n            \"publicationYear\": 2018,\n            \"createdAt\": \"2025-03-20T07:28:17.620Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211d9e\",\n            \"title\": \"The Last Horizon\",\n            \"author\": \"Michael Brown\",\n            \"publicationYear\": 2021,\n            \"createdAt\": \"2025-03-20T07:28:17.620Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211d9f\",\n            \"title\": \"Beneath the Stars\",\n            \"author\": \"Sarah White\",\n            \"publicationYear\": 2017,\n            \"createdAt\": \"2025-03-20T07:28:17.620Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211da0\",\n            \"title\": \"Fragments of Time\",\n            \"author\": \"Robert Green\",\n            \"publicationYear\": 2019,\n            \"createdAt\": \"2025-03-20T07:28:17.620Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211da1\",\n            \"title\": \"Into the Abyss\",\n            \"author\": \"Emily Clark\",\n            \"publicationYear\": 2022,\n            \"createdAt\": \"2025-03-20T07:28:17.620Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211da2\",\n            \"title\": \"Midnight Dreams\",\n            \"author\": \"David Lee\",\n            \"publicationYear\": 2023,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211da3\",\n            \"title\": \"A Path Unseen\",\n            \"author\": \"Olivia Martin\",\n            \"publicationYear\": 2020,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211da4\",\n            \"title\": \"The Edge of Forever\",\n            \"author\": \"Chris Thompson\",\n            \"publicationYear\": 2016,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211da5\",\n            \"title\": \"The Silent Storm\",\n            \"author\": \"Ella Barnes\",\n            \"publicationYear\": 2021,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211da6\",\n            \"title\": \"Whispers of the Past\",\n            \"author\": \"Liam Jackson\",\n            \"publicationYear\": 2019,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211da7\",\n            \"title\": \"Beyond the Horizon\",\n            \"author\": \"Maya Collins\",\n            \"publicationYear\": 2022,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211da8\",\n            \"title\": \"The Forgotten Path\",\n            \"author\": \"Oliver Kent\",\n            \"publicationYear\": 2018,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211da9\",\n            \"title\": \"Under the Moonlit Sky\",\n            \"author\": \"Sophia Wells\",\n            \"publicationYear\": 2020,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211daa\",\n            \"title\": \"The Edge of Tomorrow\",\n            \"author\": \"Benjamin Ford\",\n            \"publicationYear\": 2023,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211dab\",\n            \"title\": \"Tales of the Lost City\",\n            \"author\": \"Isabella Richards\",\n            \"publicationYear\": 2020,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211dac\",\n            \"title\": \"The Mirror's Truth\",\n            \"author\": \"Lucas Patel\",\n            \"publicationYear\": 2021,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211dad\",\n            \"title\": \"Fading Lights\",\n            \"author\": \"Ava Stone\",\n            \"publicationYear\": 2022,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        },\n        {\n            \"_id\": \"67dbc313a18348e3ae211dae\",\n            \"title\": \"Rising Stars\",\n            \"author\": \"Ethan Brooks\",\n            \"publicationYear\": 2024,\n            \"createdAt\": \"2025-03-20T07:28:17.621Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/books/get/67dbc29b29283150dd1e0175",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"books",
+								"get",
+								"67dbc29b29283150dd1e0175"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get By Id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/books/get/67dbc29b29283150dd1e0175",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"books",
+										"get",
+										"67dbc29b29283150dd1e0175"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "177"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b1-sb7g/yG7l3I0LFplpm72jaz0ERE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 Mar 2025 07:29:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"67dbc29b29283150dd1e0175\",\n        \"title\": \"A Path Unseen\",\n        \"author\": \"Olivia Martin\",\n        \"publicationYear\": 2020,\n        \"createdAt\": \"2025-03-20T07:24:11.145Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Book",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  { \"title\": \"A Path of Life\", \"author\": \"Uday Shankar Purbey\", \"publicationYear\": \"2025\" }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/books/update/67dbc1f45761d0dc251053fe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"books",
+								"update",
+								"67dbc1f45761d0dc251053fe"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update Book",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "  { \"title\": \"A Path of Life\", \"author\": \"Uday Shankar Purbey\", \"publicationYear\": \"2025\" }\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/books/update/67dbc1f45761d0dc251053fe",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"books",
+										"update",
+										"67dbc1f45761d0dc251053fe"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "222"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"de-pJQ5Jqn84pTIACeubwJ3eiRkKlo\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 Mar 2025 07:30:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Book updated successfully\",\n    \"data\": {\n        \"_id\": \"67dbc1f45761d0dc251053fe\",\n        \"title\": \"A Path of Life\",\n        \"author\": \"Uday Shankar Purbey\",\n        \"publicationYear\": 2025,\n        \"createdAt\": \"2025-03-20T07:21:24.916Z\",\n        \"__v\": 0\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/books/delete/67dbc29b29283150dd1e0175",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"books",
+								"delete",
+								"67dbc29b29283150dd1e0175"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete Book",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/books/delete/67dbc29b29283150dd1e0175",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"books",
+										"delete",
+										"67dbc29b29283150dd1e0175"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-9Wsh+Ulh36Uhq6ylxG5pCkcdTlA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 20 Mar 2025 07:31:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Book deleted successfully\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
