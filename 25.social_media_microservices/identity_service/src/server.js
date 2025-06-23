@@ -10,9 +10,10 @@ const { rateLimit } = require("express-rate-limit");
 const { RedisStore } = require("rate-limit-redis");
 const identityRouter = require("./routes/identity-service");
 const errorHandler = require("./middlewares/errorHandler");
+const { clearLogFiles } = require("./utils/clearLog");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 //connect to mongodb
 mongoose
@@ -22,6 +23,8 @@ mongoose
 
 //connect to redis
 const redisClient = new Redis(process.env.REDIS_URL);
+
+clearLogFiles(); // Clear logs at app startup
 
 //middlewares
 app.use(helmet());
@@ -86,7 +89,7 @@ app.use("/api/auth", identityRouter);
 app.use(errorHandler);
 
 app.listen(port, () => {
-  logger.info(`Server is running on port ${port}`);
+  logger.info(`Identity service is running on port ${port}`);
 });
 
 process.on("unhandledRejection", (reason, promise) => {
