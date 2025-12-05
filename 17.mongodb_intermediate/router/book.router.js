@@ -1,15 +1,10 @@
 const express = require('express');
-const {
-  createAuthor,
-  createBook,
-  getBookWithAuthor,
-} = require('../controllers/book.controller')
+const { createAuthor, createBook, getBookWithAuthor } = require('../controllers/book.controller');
 
 const router = express.Router();
 
-router.post('/create-author' ,createAuthor );
-router.post('/create-book' ,createBook );
-router.get('/book/:id' , getBookWithAuthor)
-
+router.post('/create-author', createAuthor);
+router.post('/create-book', createBook);
+router.get('/book/:id', getBookWithAuthor);
 
 module.exports = router;

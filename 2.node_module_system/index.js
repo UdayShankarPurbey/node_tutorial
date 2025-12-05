@@ -1,18 +1,16 @@
 //module.exports
-//require 
+//require
 
-const firstModule  = require('./first_module');
-
+const firstModule = require('./first_module');
 
 console.log(firstModule.add(5, 3));
 
-
 try {
-  console.log("Trying to divide by zero");
-  let result = firstModule.divide(5,0);
-  console.log("result: " + result);
+  console.log('Trying to divide by zero');
+  let result = firstModule.divide(5, 0);
+  console.log('result: ' + result);
 } catch (error) {
-  console.log("Error: " + error.message);
+  console.log('Error: ' + error.message);
 }
 
 // module wrapper

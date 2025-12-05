@@ -1,538 +1,464 @@
 {
-	"info": {
-		"_postman_id": "9302625f-3d5c-45d5-b5d3-8edbe26df135",
-		"name": "17.mongodb_intermediate",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30996747"
-	},
-	"item": [
-		{
-			"name": "Product",
-			"item": [
-				{
-					"name": "Add Sample Products",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/products/add",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"products",
-								"add"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Add Sample Products",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/api/products/add",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"products",
-										"add"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "68"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"44-tISAj2Nxeye7wRtk0GpSXQYhVfU\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 21 Mar 2025 06:45:15 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Sample 52 product inserted successfully\"\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Product Stats",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/products/stats",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"products",
-								"stats"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Get Product Stats",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/api/products/stats",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"products",
-										"stats"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "654"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"28e-V8gOo+hO+iApUPfDqALIKJQHqLo\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 21 Mar 2025 06:56:09 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Product stats 11 retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"Outdoor Gear\",\n            \"avgPrice\": 39.99,\n            \"count\": 1\n        },\n        {\n            \"_id\": \"Furniture\",\n            \"avgPrice\": 129.99,\n            \"count\": 1\n        },\n        {\n            \"_id\": \"Sports & Outdoors\",\n            \"avgPrice\": 221.49,\n            \"count\": 4\n        },\n        {\n            \"_id\": \"Home Appliances\",\n            \"avgPrice\": 189.05058823529413,\n            \"count\": 17\n        },\n        {\n            \"_id\": \"Tools\",\n            \"avgPrice\": 59.99,\n            \"count\": 1\n        },\n        {\n            \"_id\": \"Home Security\",\n            \"avgPrice\": 199.99,\n            \"count\": 1\n        },\n        {\n            \"_id\": \"Home Decor\",\n            \"avgPrice\": 19.99,\n            \"count\": 1\n        },\n        {\n            \"_id\": \"Wearables\",\n            \"avgPrice\": 49.99,\n            \"count\": 1\n        },\n        {\n            \"_id\": \"Electronics\",\n            \"avgPrice\": 239.92071428571427,\n            \"count\": 14\n        },\n        {\n            \"_id\": \"Accessories\",\n            \"avgPrice\": 37.745,\n            \"count\": 2\n        },\n        {\n            \"_id\": \"Health & Beauty\",\n            \"avgPrice\": 51.66,\n            \"count\": 3\n        }\n    ]\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Category Wise Analysis",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/products/analysis",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"products",
-								"analysis"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Get Category Wise Analysis",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/api/products/analysis",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"products",
-										"analysis"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "179"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"b3-IzxUMKnIF1nFUO3ArcG4aLLxlJA\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 21 Mar 2025 07:04:31 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Product analysis 1 retrieved successfully\",\n    \"data\": [\n        {\n            \"totalRevenue\": 5237.86,\n            \"avgPrice\": 290.9922222222222,\n            \"maxPrice\": 799,\n            \"minPrice\": 25,\n            \"priceRange\": 774\n        }\n    ]\n}"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Book",
-			"item": [
-				{
-					"name": "Create Author",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": " {\r\n    \"name\": \"John Doe\",\r\n    \"bio\": \"A passionate software developer with a love for coding and technology.\"\r\n  }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/book/create-author",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"book",
-								"create-author"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Create Author",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": " {\r\n    \"name\": \"John Doe\",\r\n    \"bio\": \"A passionate software developer with a love for coding and technology.\"\r\n  }",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:3000/api/book/create-author",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"book",
-										"create-author"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "203"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"cb-64sr9aGBn/ThsmSmJcOTUwCS13M\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 21 Mar 2025 07:19:39 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Author created successfully\",\n    \"data\": {\n        \"name\": \"John Doe\",\n        \"bio\": \"A passionate software developer with a love for coding and technology.\",\n        \"_id\": \"67dd130b0aeb74e360ab396b\",\n        \"__v\": 0\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Create Book",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"The Journey\",\r\n    \"authorId\": \"67dd12f70aeb74e360ab3965\"\r\n  }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/book/create-book",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"book",
-								"create-book"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Create Book",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"title\": \"The Journey\",\r\n    \"authorId\": \"67dd12f70aeb74e360ab3965\"\r\n  }",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:3000/api/book/create-book",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"book",
-										"create-book"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "162"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"a2-vz/fEUFcbd7e366x6Xvqy7JTKPo\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 21 Mar 2025 07:24:05 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Book created successfully\",\n    \"data\": {\n        \"title\": \"The Journey\",\n        \"author\": \"67dd12f70aeb74e360ab3965\",\n        \"_id\": \"67dd141591571676ef552ade\",\n        \"__v\": 0\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Get Book With Author",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/book/book/67dd1521d0c1f25fc23a7e38",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"book",
-								"book",
-								"67dd1521d0c1f25fc23a7e38"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Get Book With Author",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/api/book/book/67dd1521d0c1f25fc23a7e38",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"book",
-										"book",
-										"67dd1521d0c1f25fc23a7e38"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "277"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"115-yCUYZckw+UVQnH78ESS4WXXf8i0\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 21 Mar 2025 07:34:35 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"67dd1521d0c1f25fc23a7e38\",\n        \"title\": \"The Journey\",\n        \"author\": {\n            \"_id\": \"67dd12f70aeb74e360ab3965\",\n            \"name\": \"Bob Brown\",\n            \"bio\": \"An avid traveler and photographer who captures moments from all around the world.\"\n        },\n        \"__v\": 0\n    },\n    \"message\": \"Book Found successfully\"\n}"
-						}
-					]
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "9302625f-3d5c-45d5-b5d3-8edbe26df135",
+    "name": "17.mongodb_intermediate",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30996747"
+  },
+  "item": [
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "Add Sample Products",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/products/add",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "products", "add"]
+            }
+          },
+          "response": [
+            {
+              "name": "Add Sample Products",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/products/add",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "products", "add"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "68"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"44-tISAj2Nxeye7wRtk0GpSXQYhVfU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 21 Mar 2025 06:45:15 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Sample 52 product inserted successfully\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Product Stats",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/products/stats",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "products", "stats"]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Product Stats",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/products/stats",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "products", "stats"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "654"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"28e-V8gOo+hO+iApUPfDqALIKJQHqLo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 21 Mar 2025 06:56:09 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Product stats 11 retrieved successfully\",\n    \"data\": [\n        {\n            \"_id\": \"Outdoor Gear\",\n            \"avgPrice\": 39.99,\n            \"count\": 1\n        },\n        {\n            \"_id\": \"Furniture\",\n            \"avgPrice\": 129.99,\n            \"count\": 1\n        },\n        {\n            \"_id\": \"Sports & Outdoors\",\n            \"avgPrice\": 221.49,\n            \"count\": 4\n        },\n        {\n            \"_id\": \"Home Appliances\",\n            \"avgPrice\": 189.05058823529413,\n            \"count\": 17\n        },\n        {\n            \"_id\": \"Tools\",\n            \"avgPrice\": 59.99,\n            \"count\": 1\n        },\n        {\n            \"_id\": \"Home Security\",\n            \"avgPrice\": 199.99,\n            \"count\": 1\n        },\n        {\n            \"_id\": \"Home Decor\",\n            \"avgPrice\": 19.99,\n            \"count\": 1\n        },\n        {\n            \"_id\": \"Wearables\",\n            \"avgPrice\": 49.99,\n            \"count\": 1\n        },\n        {\n            \"_id\": \"Electronics\",\n            \"avgPrice\": 239.92071428571427,\n            \"count\": 14\n        },\n        {\n            \"_id\": \"Accessories\",\n            \"avgPrice\": 37.745,\n            \"count\": 2\n        },\n        {\n            \"_id\": \"Health & Beauty\",\n            \"avgPrice\": 51.66,\n            \"count\": 3\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Category Wise Analysis",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/products/analysis",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "products", "analysis"]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Category Wise Analysis",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/products/analysis",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "products", "analysis"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "179"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"b3-IzxUMKnIF1nFUO3ArcG4aLLxlJA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 21 Mar 2025 07:04:31 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Product analysis 1 retrieved successfully\",\n    \"data\": [\n        {\n            \"totalRevenue\": 5237.86,\n            \"avgPrice\": 290.9922222222222,\n            \"maxPrice\": 799,\n            \"minPrice\": 25,\n            \"priceRange\": 774\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Book",
+      "item": [
+        {
+          "name": "Create Author",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n    \"name\": \"John Doe\",\r\n    \"bio\": \"A passionate software developer with a love for coding and technology.\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/book/create-author",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "book", "create-author"]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Author",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": " {\r\n    \"name\": \"John Doe\",\r\n    \"bio\": \"A passionate software developer with a love for coding and technology.\"\r\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/book/create-author",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "book", "create-author"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "203"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"cb-64sr9aGBn/ThsmSmJcOTUwCS13M\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 21 Mar 2025 07:19:39 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Author created successfully\",\n    \"data\": {\n        \"name\": \"John Doe\",\n        \"bio\": \"A passionate software developer with a love for coding and technology.\",\n        \"_id\": \"67dd130b0aeb74e360ab396b\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Book",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\": \"The Journey\",\r\n    \"authorId\": \"67dd12f70aeb74e360ab3965\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/book/create-book",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "book", "create-book"]
+            }
+          },
+          "response": [
+            {
+              "name": "Create Book",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\": \"The Journey\",\r\n    \"authorId\": \"67dd12f70aeb74e360ab3965\"\r\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/book/create-book",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "book", "create-book"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "162"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"a2-vz/fEUFcbd7e366x6Xvqy7JTKPo\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 21 Mar 2025 07:24:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Book created successfully\",\n    \"data\": {\n        \"title\": \"The Journey\",\n        \"author\": \"67dd12f70aeb74e360ab3965\",\n        \"_id\": \"67dd141591571676ef552ade\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Book With Author",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/book/book/67dd1521d0c1f25fc23a7e38",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "book", "book", "67dd1521d0c1f25fc23a7e38"]
+            }
+          },
+          "response": [
+            {
+              "name": "Get Book With Author",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/book/book/67dd1521d0c1f25fc23a7e38",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "book", "book", "67dd1521d0c1f25fc23a7e38"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "277"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"115-yCUYZckw+UVQnH78ESS4WXXf8i0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 21 Mar 2025 07:34:35 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": {\n        \"_id\": \"67dd1521d0c1f25fc23a7e38\",\n        \"title\": \"The Journey\",\n        \"author\": {\n            \"_id\": \"67dd12f70aeb74e360ab3965\",\n            \"name\": \"Bob Brown\",\n            \"bio\": \"An avid traveler and photographer who captures moments from all around the world.\"\n        },\n        \"__v\": 0\n    },\n    \"message\": \"Book Found successfully\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -4,10 +4,10 @@ const isAdminUser = (req, res, next) => {
     next();
   } else {
     res.status(403).json({
-      success : false,
-      message : "Authorized By Admin Only"
-     });
+      success: false,
+      message: 'Authorized By Admin Only',
+    });
   }
-}
+};
 
 module.exports = isAdminUser;

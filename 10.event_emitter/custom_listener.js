@@ -1,21 +1,20 @@
 const EventEmitter = require('events');
 
 class MyCustomEmitter extends EventEmitter {
-    constructor() {
-        super();
-        this.greeting = 'Hello'
-    }
+  constructor() {
+    super();
+    this.greeting = 'Hello';
+  }
 
-    greet(name) {
-        this.emit('greeting' , `${this.greeting} , ${name}`)
-    }
+  greet(name) {
+    this.emit('greeting', `${this.greeting} , ${name}`);
+  }
 }
-
 
 const myCustomEmitter = new MyCustomEmitter();
 
-myCustomEmitter.on('greeting' , (input) => {
-    console.log("Greeting Event : " , input);
-})
+myCustomEmitter.on('greeting', (input) => {
+  console.log('Greeting Event : ', input);
+});
 
-myCustomEmitter.greet('Uday Kumar Purbey')
+myCustomEmitter.greet('Uday Kumar Purbey');

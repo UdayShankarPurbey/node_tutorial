@@ -6,10 +6,14 @@ const { uploadImage, getAllImage, deleteImage } = require('../controllers/image.
 
 const router = express.Router();
 
-router.post('/image' , authMiddleware , adminMiddleware  ,multerMiddleware.single('image'), uploadImage  );
-router.get('/getAllImages' , authMiddleware , adminMiddleware , getAllImage );
-router.delete('/delete/:id' , authMiddleware , adminMiddleware , deleteImage  );
-
-
+router.post(
+  '/image',
+  authMiddleware,
+  adminMiddleware,
+  multerMiddleware.single('image'),
+  uploadImage,
+);
+router.get('/getAllImages', authMiddleware, adminMiddleware, getAllImage);
+router.delete('/delete/:id', authMiddleware, adminMiddleware, deleteImage);
 
 module.exports = router;

@@ -1,13 +1,13 @@
-require("dotenv").configDotenv();
-const express = require("express");
-const mongoose = require("mongoose");
-const { Redis } = require("ioredis");
-const logger = require("./utils/logger");
-const helmet = require("helmet");
-const cors = require("cors");
-const errorHandler = require("./middlewares/errorHandler");
-const postRouter = require("./routes/post");
-const { clearLogFiles } = require("./utils/clearLog");
+require('dotenv').configDotenv();
+const express = require('express');
+const mongoose = require('mongoose');
+const { Redis } = require('ioredis');
+const logger = require('./utils/logger');
+const helmet = require('helmet');
+const cors = require('cors');
+const errorHandler = require('./middlewares/errorHandler');
+const postRouter = require('./routes/post');
+const { clearLogFiles } = require('./utils/clearLog');
 
 const app = express();
 const port = process.env.PORT || 3002;
@@ -15,8 +15,8 @@ const port = process.env.PORT || 3002;
 //connect to mongodb
 mongoose
   .connect(process.env.MONGODB_URI)
-  .then(() => logger.info("Connected to MongoDB"))
-  .catch((err) => logger.error("MongoDB connection failed", err));
+  .then(() => logger.info('Connected to MongoDB'))
+  .catch((err) => logger.error('MongoDB connection failed', err));
 
 //connect to redis
 const redisClient = new Redis(process.env.REDIS_URL);
@@ -38,12 +38,12 @@ app.use((req, res, next) => {
 
 // routes
 app.use(
-  "/api/posts",
+  '/api/posts',
   (req, res, next) => {
     req.redisClient = redisClient;
     next();
   },
-  postRouter
+  postRouter,
 );
 
 //error handler
@@ -53,6 +53,6 @@ app.listen(port, () => {
   logger.info(`Post service is running on port ${port}`);
 });
 
-process.on("unhandledRejection", (reason, promise) => {
-  logger.error("Unhandled Rejection at:", promise, "reason:", reason);
+process.on('unhandledRejection', (reason, promise) => {
+  logger.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });

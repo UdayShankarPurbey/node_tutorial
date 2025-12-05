@@ -1,789 +1,691 @@
 {
-	"info": {
-		"_postman_id": "3092c52f-a6b5-4de3-99ab-5560d50b7e10",
-		"name": "16.nodejs_auth",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30996747"
-	},
-	"item": [
-		{
-			"name": "User",
-			"item": [
-				{
-					"name": "Login",
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "  {\r\n    \"username\": \"emilyjones\",\r\n    \"password\": \"littleFOX@haven42\"\r\n  }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/user/login",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"user",
-								"login"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Login",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "  {\r\n    \"username\": \"emilyjones\",\r\n    \"password\": \"littleFOX@haven42\"\r\n  }",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:3000/api/user/login",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"user",
-										"login"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "540"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"21c-6t/ZT0Lcw5VIr9UbknR/8t3iax8\""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 20 Mar 2025 09:57:21 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"User logged in successfully\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTlkMDc1MTA1ZDEzYTdjYzFiNSIsInVzZXJuYW1lIjoiZW1pbHlqb25lcyIsImVtYWlsIjoiZW1pbHlqb25lc0BleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjQ2NDY0MSwiZXhwIjoxNzQyNDY0NzAxfQ.HNdYVmB04TQuo8NLVhnLNZXNchdhVwRqQcRn_pwLi34\",\n        \"_id\": \"67dbe19d075105d13a7cc1b5\",\n        \"username\": \"emilyjones\",\n        \"email\": \"emilyjones@example.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2025-03-20T09:36:29.749Z\",\n        \"updatedAt\": \"2025-03-20T09:36:29.749Z\",\n        \"__v\": 0\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Register",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "\r\n//   {\r\n//     \"username\": \"johndoe\",\r\n//     \"email\": \"johndoe@example.com\",\r\n//     \"password\": \"securePassword123\",\r\n//     \"role\": \"admin\"\r\n//   },\r\n//   {\r\n//     \"username\": \"janedoe\",\r\n//     \"email\": \"janedoe@example.com\",\r\n//     \"password\": \"password456\",\r\n//     \"role\": \"user\"\r\n//   },\r\n//   {\r\n//     \"username\": \"alexsmith\",\r\n//     \"email\": \"alexsmith@example.com\",\r\n//     \"password\": \"mypassword789\",\r\n//     \"role\": \"user\"\r\n//   },\r\n//   {\r\n//     \"username\": \"emilyjones\",\r\n//     \"email\": \"emilyjones@example.com\",\r\n//     \"password\": \"emilyPassword2021\",\r\n//     \"role\": \"admin\"\r\n//   },\r\n//   {\r\n//     \"username\": \"markbrown\",\r\n//     \"email\": \"markbrown@example.com\",\r\n//     \"password\": \"markPassword555\",\r\n//     \"role\": \"user\"\r\n//   },\r\n//   {\r\n//     \"username\": \"susanwhite\",\r\n//     \"email\": \"susanwhite@example.com\",\r\n//     \"password\": \"whitePassword123\",\r\n//     \"role\": \"admin\"\r\n//   },\r\n//   {\r\n//     \"username\": \"davidlee\",\r\n//     \"email\": \"davidlee@example.com\",\r\n//     \"password\": \"davidPassword321\",\r\n//     \"role\": \"user\"\r\n//   },\r\n//   {\r\n//     \"username\": \"robertsmith\",\r\n//     \"email\": \"robertsmith@example.com\",\r\n//     \"password\": \"robertsmith2023\",\r\n//     \"role\": \"admin\"\r\n//   },\r\n  {\r\n    \"username\": \"lucywilson\",\r\n    \"email\": \"lucywilson@example.com\",\r\n    \"password\": \"lucyPassword777\",\r\n    \"role\": \"user\"\r\n  }\r\n\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/user/register",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"user",
-								"register"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Register",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "  {\r\n    \"username\": \"emilyjones\",\r\n    \"email\": \"emilyjones@example.com\",\r\n    \"password\": \"littleFOX@haven42\",\r\n    \"role\": \"admin\"\r\n  }",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:3000/api/user/register",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"user",
-										"register"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "331"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"14b-Lwcwu2yDmK5kkZBzQ6zpPA813Sw\""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 20 Mar 2025 09:36:29 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"username\": \"emilyjones\",\n        \"email\": \"emilyjones@example.com\",\n        \"password\": \"$2b$10$rWvJN7Ai58j7gdavb6N8W.DvjwOo62THk4cz53lxWA69/WjzBFq6S\",\n        \"role\": \"admin\",\n        \"_id\": \"67dbe19d075105d13a7cc1b5\",\n        \"createdAt\": \"2025-03-20T09:36:29.749Z\",\n        \"updatedAt\": \"2025-03-20T09:36:29.749Z\",\n        \"__v\": 0\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Admin Welcome Page",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTlkMDc1MTA1ZDEzYTdjYzFiNSIsInVzZXJuYW1lIjoiZW1pbHlqb25lcyIsImVtYWlsIjoiZW1pbHlqb25lc0BleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjQ2ODE0MCwiZXhwIjoxNzQyNDY5MDQwfQ.sHraftLvezxn3i2HjmOUqApconS2UxVBEvjCIFQGQFI",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/admin/welcome",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"admin",
-								"welcome"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Admin Welcome Page",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/api/admin/welcome",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"admin",
-										"welcome"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "201"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"c9-spPCQgYG0WdkMx2W3eRKiLza+II\""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 20 Mar 2025 10:55:48 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Welcome to the Admin Page\",\n    \"data\": {\n        \"id\": \"67dbe19d075105d13a7cc1b5\",\n        \"username\": \"emilyjones\",\n        \"email\": \"emilyjones@example.com\",\n        \"role\": \"admin\",\n        \"iat\": 1742468140,\n        \"exp\": 1742469040\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "User Welcome Page",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTlkMDc1MTA1ZDEzYTdjYzFiNSIsInVzZXJuYW1lIjoiZW1pbHlqb25lcyIsImVtYWlsIjoiZW1pbHlqb25lc0BleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjQ2NzUzNCwiZXhwIjoxNzQyNDY3NTk0fQ.8AbWHnUTGzpBB7o2UmOIlZHg5fRepNsbKOcgGRfuuNQ",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Authorization",
-								"value": "",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"url": {
-							"raw": "http://localhost:3000/api/home/welcome",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"home",
-								"welcome"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "User Welcome Page",
-							"originalRequest": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "Authorization",
-										"value": "",
-										"type": "text",
-										"disabled": true
-									}
-								],
-								"url": {
-									"raw": "http://localhost:3000/api/home/welcome",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"home",
-										"welcome"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "194"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"c2-VdwsnzwSf03ekXkdlIR9lYI7OiA\""
-								},
-								{
-									"key": "Date",
-									"value": "Thu, 20 Mar 2025 10:45:43 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Welcome to the API\",\n    \"user\": {\n        \"id\": \"67dbe19d075105d13a7cc1b5\",\n        \"username\": \"emilyjones\",\n        \"email\": \"emilyjones@example.com\",\n        \"role\": \"admin\",\n        \"iat\": 1742467534,\n        \"exp\": 1742467594\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Change Password",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTM2MDc1MTA1ZDEzYTdjYzFhMCIsInVzZXJuYW1lIjoibHVjeXdpbHNvbiIsImVtYWlsIjoibHVjeXdpbHNvbkBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQyNTM2NTUwLCJleHAiOjE3NDI1Mzc0NTB9.-WA0_sBoFxdfW9Lprd1G2vjVulvXUT-Ok7L10ODgcqY",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{ \"oldPassword\" : \"littleFOX@haven2\" , \"newPassword\" : \"littleFOX@haven42\" }",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/user/changePassword",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"user",
-								"changePassword"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Change Password",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{ \"oldPassword\" : \"littleFOX@haven2\" , \"newPassword\" : \"littleFOX@haven42\" }",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "http://localhost:3000/api/user/changePassword",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"user",
-										"changePassword"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "331"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"14b-+8K+OPQvDzV2OS4hzHJVgN3cvro\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 21 Mar 2025 06:00:16 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Password changed successfully\",\n    \"data\": {\n        \"_id\": \"67dbe136075105d13a7cc1a0\",\n        \"username\": \"lucywilson\",\n        \"email\": \"lucywilson@example.com\",\n        \"password\": \"$2b$10$J5pFr36DJI0EqjOKCqX1/eyUTbbreXr42brJhcpnHH6PHkqZyRJ3u\",\n        \"role\": \"user\",\n        \"createdAt\": \"2025-03-20T09:34:46.022Z\",\n        \"updatedAt\": \"2025-03-21T06:00:16.888Z\",\n        \"__v\": 0\n    }\n}"
-						}
-					]
-				}
-			]
-		},
-		{
-			"name": "Images",
-			"item": [
-				{
-					"name": "Upload Image",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTlkMDc1MTA1ZDEzYTdjYzFiNSIsInVzZXJuYW1lIjoiZW1pbHlqb25lcyIsImVtYWlsIjoiZW1pbHlqb25lc0BleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjUzNDQ5OSwiZXhwIjoxNzQyNTM1Mzk5fQ.YagAPcrH7zarEq0Qax-BFXE37OAtdY5lxTOnltzKwME",
-									"type": "string"
-								}
-							]
-						},
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "image",
-									"type": "file",
-									"src": "/C:/Users/Administrator/Downloads/New folder/php_sql/pexels-anjana-c-169994-674010.jpg"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:3000/api/upload/image",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"upload",
-								"image"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Upload Images",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "image",
-											"type": "file",
-											"src": "/C:/Users/Administrator/Downloads/New folder/php_sql/pexels-anjana-c-169994-674010.jpg"
-										}
-									]
-								},
-								"url": {
-									"raw": "http://localhost:3000/api/upload/image",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"upload",
-										"image"
-									]
-								}
-							},
-							"status": "Created",
-							"code": 201,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "313"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"139-lygJS4apPQFerD3GAe3BW0CMgI0\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 21 Mar 2025 05:36:30 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Image uploaded successfully\",\n    \"data\": {\n        \"url\": \"https://res.cloudinary.com/do8vkz3mn/image/upload/v1742535390/fbn5yqebfpu9b029bdlq.jpg\",\n        \"publicId\": \"fbn5yqebfpu9b029bdlq\",\n        \"_id\": \"67dcfade1c076ad9672a5c48\",\n        \"createdAt\": \"2025-03-21T05:36:30.817Z\",\n        \"updatedAt\": \"2025-03-21T05:36:30.817Z\",\n        \"__v\": 0\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Get All Image",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTlkMDc1MTA1ZDEzYTdjYzFiNSIsInVzZXJuYW1lIjoiZW1pbHlqb25lcyIsImVtYWlsIjoiZW1pbHlqb25lc0BleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjUzNTYxMywiZXhwIjoxNzQyNTM2NTEzfQ.UKwiUf6J6eoVHaqKwZwSzRUDgYiHEv3cs5uIalMjk6w",
-									"type": "string"
-								}
-							]
-						},
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/upload/getAllImages",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"upload",
-								"getAllImages"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Get All Image",
-							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/api/upload/getAllImages",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"upload",
-										"getAllImages"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "1025"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"401-XxyANfZ2nxzCJ0rbmHbMTdroAbI\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 21 Mar 2025 05:40:24 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"67dcfade1c076ad9672a5c48\",\n            \"url\": \"https://res.cloudinary.com/do8vkz3mn/image/upload/v1742535390/fbn5yqebfpu9b029bdlq.jpg\",\n            \"publicId\": \"fbn5yqebfpu9b029bdlq\",\n            \"createdAt\": \"2025-03-21T05:36:30.817Z\",\n            \"updatedAt\": \"2025-03-21T05:36:30.817Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67dcfa7c1c076ad9672a5c46\",\n            \"url\": \"https://res.cloudinary.com/do8vkz3mn/image/upload/v1742535292/axi3hvub7nshi80ebelu.jpg\",\n            \"publicId\": \"axi3hvub7nshi80ebelu\",\n            \"createdAt\": \"2025-03-21T05:34:52.924Z\",\n            \"updatedAt\": \"2025-03-21T05:34:52.924Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67dcf9ed81c83dde754a456d\",\n            \"url\": \"https://res.cloudinary.com/do8vkz3mn/image/upload/v1742535148/pyq6pywmw1h3u4gobgjc.jpg\",\n            \"publicId\": \"pyq6pywmw1h3u4gobgjc\",\n            \"createdAt\": \"2025-03-21T05:32:29.262Z\",\n            \"updatedAt\": \"2025-03-21T05:32:29.262Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67dcf9ea81c83dde754a456b\",\n            \"url\": \"https://res.cloudinary.com/do8vkz3mn/image/upload/v1742535145/dxxe4ivxwwiyyecobkxm.jpg\",\n            \"publicId\": \"dxxe4ivxwwiyyecobkxm\",\n            \"createdAt\": \"2025-03-21T05:32:26.420Z\",\n            \"updatedAt\": \"2025-03-21T05:32:26.420Z\",\n            \"__v\": 0\n        }\n    ]\n}"
-						}
-					]
-				},
-				{
-					"name": "Delete Image",
-					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTlkMDc1MTA1ZDEzYTdjYzFiNSIsInVzZXJuYW1lIjoiZW1pbHlqb25lcyIsImVtYWlsIjoiZW1pbHlqb25lc0BleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjUzNzMwNywiZXhwIjoxNzQyNTM4MjA3fQ.TG3B6-znBowyOwIiG149-WUz5Qt3CxOBuS9AjqLDC0w",
-									"type": "string"
-								}
-							]
-						},
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/api/upload/delete/67dd035bd3ca2a34d50b723e",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"api",
-								"upload",
-								"delete",
-								"67dd035bd3ca2a34d50b723e"
-							]
-						}
-					},
-					"response": [
-						{
-							"name": "Delete Image",
-							"originalRequest": {
-								"method": "DELETE",
-								"header": [],
-								"url": {
-									"raw": "http://localhost:3000/api/upload/delete/67dd035bd3ca2a34d50b723e",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "3000",
-									"path": [
-										"api",
-										"upload",
-										"delete",
-										"67dd035bd3ca2a34d50b723e"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "55"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"37-aixXnJP33LhesYdvurb4aHm64z4\""
-								},
-								{
-									"key": "Date",
-									"value": "Fri, 21 Mar 2025 06:13:46 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"success\": true,\n    \"message\": \"Image deleted successfully\"\n}"
-						}
-					]
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "3092c52f-a6b5-4de3-99ab-5560d50b7e10",
+    "name": "16.nodejs_auth",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30996747"
+  },
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\r\n    \"username\": \"emilyjones\",\r\n    \"password\": \"littleFOX@haven42\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/user/login",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "user", "login"]
+            }
+          },
+          "response": [
+            {
+              "name": "Login",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "  {\r\n    \"username\": \"emilyjones\",\r\n    \"password\": \"littleFOX@haven42\"\r\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/user/login",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "user", "login"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "540"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"21c-6t/ZT0Lcw5VIr9UbknR/8t3iax8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 20 Mar 2025 09:57:21 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"User logged in successfully\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTlkMDc1MTA1ZDEzYTdjYzFiNSIsInVzZXJuYW1lIjoiZW1pbHlqb25lcyIsImVtYWlsIjoiZW1pbHlqb25lc0BleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjQ2NDY0MSwiZXhwIjoxNzQyNDY0NzAxfQ.HNdYVmB04TQuo8NLVhnLNZXNchdhVwRqQcRn_pwLi34\",\n        \"_id\": \"67dbe19d075105d13a7cc1b5\",\n        \"username\": \"emilyjones\",\n        \"email\": \"emilyjones@example.com\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2025-03-20T09:36:29.749Z\",\n        \"updatedAt\": \"2025-03-20T09:36:29.749Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "\r\n//   {\r\n//     \"username\": \"johndoe\",\r\n//     \"email\": \"johndoe@example.com\",\r\n//     \"password\": \"securePassword123\",\r\n//     \"role\": \"admin\"\r\n//   },\r\n//   {\r\n//     \"username\": \"janedoe\",\r\n//     \"email\": \"janedoe@example.com\",\r\n//     \"password\": \"password456\",\r\n//     \"role\": \"user\"\r\n//   },\r\n//   {\r\n//     \"username\": \"alexsmith\",\r\n//     \"email\": \"alexsmith@example.com\",\r\n//     \"password\": \"mypassword789\",\r\n//     \"role\": \"user\"\r\n//   },\r\n//   {\r\n//     \"username\": \"emilyjones\",\r\n//     \"email\": \"emilyjones@example.com\",\r\n//     \"password\": \"emilyPassword2021\",\r\n//     \"role\": \"admin\"\r\n//   },\r\n//   {\r\n//     \"username\": \"markbrown\",\r\n//     \"email\": \"markbrown@example.com\",\r\n//     \"password\": \"markPassword555\",\r\n//     \"role\": \"user\"\r\n//   },\r\n//   {\r\n//     \"username\": \"susanwhite\",\r\n//     \"email\": \"susanwhite@example.com\",\r\n//     \"password\": \"whitePassword123\",\r\n//     \"role\": \"admin\"\r\n//   },\r\n//   {\r\n//     \"username\": \"davidlee\",\r\n//     \"email\": \"davidlee@example.com\",\r\n//     \"password\": \"davidPassword321\",\r\n//     \"role\": \"user\"\r\n//   },\r\n//   {\r\n//     \"username\": \"robertsmith\",\r\n//     \"email\": \"robertsmith@example.com\",\r\n//     \"password\": \"robertsmith2023\",\r\n//     \"role\": \"admin\"\r\n//   },\r\n  {\r\n    \"username\": \"lucywilson\",\r\n    \"email\": \"lucywilson@example.com\",\r\n    \"password\": \"lucyPassword777\",\r\n    \"role\": \"user\"\r\n  }\r\n\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/user/register",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "user", "register"]
+            }
+          },
+          "response": [
+            {
+              "name": "Register",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "  {\r\n    \"username\": \"emilyjones\",\r\n    \"email\": \"emilyjones@example.com\",\r\n    \"password\": \"littleFOX@haven42\",\r\n    \"role\": \"admin\"\r\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/user/register",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "user", "register"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "331"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"14b-Lwcwu2yDmK5kkZBzQ6zpPA813Sw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 20 Mar 2025 09:36:29 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"username\": \"emilyjones\",\n        \"email\": \"emilyjones@example.com\",\n        \"password\": \"$2b$10$rWvJN7Ai58j7gdavb6N8W.DvjwOo62THk4cz53lxWA69/WjzBFq6S\",\n        \"role\": \"admin\",\n        \"_id\": \"67dbe19d075105d13a7cc1b5\",\n        \"createdAt\": \"2025-03-20T09:36:29.749Z\",\n        \"updatedAt\": \"2025-03-20T09:36:29.749Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Admin Welcome Page",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTlkMDc1MTA1ZDEzYTdjYzFiNSIsInVzZXJuYW1lIjoiZW1pbHlqb25lcyIsImVtYWlsIjoiZW1pbHlqb25lc0BleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjQ2ODE0MCwiZXhwIjoxNzQyNDY5MDQwfQ.sHraftLvezxn3i2HjmOUqApconS2UxVBEvjCIFQGQFI",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/admin/welcome",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "admin", "welcome"]
+            }
+          },
+          "response": [
+            {
+              "name": "Admin Welcome Page",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/admin/welcome",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "admin", "welcome"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "201"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"c9-spPCQgYG0WdkMx2W3eRKiLza+II\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 20 Mar 2025 10:55:48 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Welcome to the Admin Page\",\n    \"data\": {\n        \"id\": \"67dbe19d075105d13a7cc1b5\",\n        \"username\": \"emilyjones\",\n        \"email\": \"emilyjones@example.com\",\n        \"role\": \"admin\",\n        \"iat\": 1742468140,\n        \"exp\": 1742469040\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "User Welcome Page",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTlkMDc1MTA1ZDEzYTdjYzFiNSIsInVzZXJuYW1lIjoiZW1pbHlqb25lcyIsImVtYWlsIjoiZW1pbHlqb25lc0BleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjQ2NzUzNCwiZXhwIjoxNzQyNDY3NTk0fQ.8AbWHnUTGzpBB7o2UmOIlZHg5fRepNsbKOcgGRfuuNQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:3000/api/home/welcome",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "home", "welcome"]
+            }
+          },
+          "response": [
+            {
+              "name": "User Welcome Page",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "",
+                    "type": "text",
+                    "disabled": true
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:3000/api/home/welcome",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "home", "welcome"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "194"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"c2-VdwsnzwSf03ekXkdlIR9lYI7OiA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 20 Mar 2025 10:45:43 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Welcome to the API\",\n    \"user\": {\n        \"id\": \"67dbe19d075105d13a7cc1b5\",\n        \"username\": \"emilyjones\",\n        \"email\": \"emilyjones@example.com\",\n        \"role\": \"admin\",\n        \"iat\": 1742467534,\n        \"exp\": 1742467594\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTM2MDc1MTA1ZDEzYTdjYzFhMCIsInVzZXJuYW1lIjoibHVjeXdpbHNvbiIsImVtYWlsIjoibHVjeXdpbHNvbkBleGFtcGxlLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQyNTM2NTUwLCJleHAiOjE3NDI1Mzc0NTB9.-WA0_sBoFxdfW9Lprd1G2vjVulvXUT-Ok7L10ODgcqY",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \"oldPassword\" : \"littleFOX@haven2\" , \"newPassword\" : \"littleFOX@haven42\" }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/user/changePassword",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "user", "changePassword"]
+            }
+          },
+          "response": [
+            {
+              "name": "Change Password",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{ \"oldPassword\" : \"littleFOX@haven2\" , \"newPassword\" : \"littleFOX@haven42\" }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/user/changePassword",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "user", "changePassword"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "331"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"14b-+8K+OPQvDzV2OS4hzHJVgN3cvro\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 21 Mar 2025 06:00:16 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Password changed successfully\",\n    \"data\": {\n        \"_id\": \"67dbe136075105d13a7cc1a0\",\n        \"username\": \"lucywilson\",\n        \"email\": \"lucywilson@example.com\",\n        \"password\": \"$2b$10$J5pFr36DJI0EqjOKCqX1/eyUTbbreXr42brJhcpnHH6PHkqZyRJ3u\",\n        \"role\": \"user\",\n        \"createdAt\": \"2025-03-20T09:34:46.022Z\",\n        \"updatedAt\": \"2025-03-21T06:00:16.888Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Images",
+      "item": [
+        {
+          "name": "Upload Image",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTlkMDc1MTA1ZDEzYTdjYzFiNSIsInVzZXJuYW1lIjoiZW1pbHlqb25lcyIsImVtYWlsIjoiZW1pbHlqb25lc0BleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjUzNDQ5OSwiZXhwIjoxNzQyNTM1Mzk5fQ.YagAPcrH7zarEq0Qax-BFXE37OAtdY5lxTOnltzKwME",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "image",
+                  "type": "file",
+                  "src": "/C:/Users/Administrator/Downloads/New folder/php_sql/pexels-anjana-c-169994-674010.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:3000/api/upload/image",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "upload", "image"]
+            }
+          },
+          "response": [
+            {
+              "name": "Upload Images",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "image",
+                      "type": "file",
+                      "src": "/C:/Users/Administrator/Downloads/New folder/php_sql/pexels-anjana-c-169994-674010.jpg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "http://localhost:3000/api/upload/image",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "upload", "image"]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "313"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"139-lygJS4apPQFerD3GAe3BW0CMgI0\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 21 Mar 2025 05:36:30 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Image uploaded successfully\",\n    \"data\": {\n        \"url\": \"https://res.cloudinary.com/do8vkz3mn/image/upload/v1742535390/fbn5yqebfpu9b029bdlq.jpg\",\n        \"publicId\": \"fbn5yqebfpu9b029bdlq\",\n        \"_id\": \"67dcfade1c076ad9672a5c48\",\n        \"createdAt\": \"2025-03-21T05:36:30.817Z\",\n        \"updatedAt\": \"2025-03-21T05:36:30.817Z\",\n        \"__v\": 0\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Image",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTlkMDc1MTA1ZDEzYTdjYzFiNSIsInVzZXJuYW1lIjoiZW1pbHlqb25lcyIsImVtYWlsIjoiZW1pbHlqb25lc0BleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjUzNTYxMywiZXhwIjoxNzQyNTM2NTEzfQ.UKwiUf6J6eoVHaqKwZwSzRUDgYiHEv3cs5uIalMjk6w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/upload/getAllImages",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "upload", "getAllImages"]
+            }
+          },
+          "response": [
+            {
+              "name": "Get All Image",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/upload/getAllImages",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "upload", "getAllImages"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1025"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"401-XxyANfZ2nxzCJ0rbmHbMTdroAbI\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 21 Mar 2025 05:40:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": \"67dcfade1c076ad9672a5c48\",\n            \"url\": \"https://res.cloudinary.com/do8vkz3mn/image/upload/v1742535390/fbn5yqebfpu9b029bdlq.jpg\",\n            \"publicId\": \"fbn5yqebfpu9b029bdlq\",\n            \"createdAt\": \"2025-03-21T05:36:30.817Z\",\n            \"updatedAt\": \"2025-03-21T05:36:30.817Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67dcfa7c1c076ad9672a5c46\",\n            \"url\": \"https://res.cloudinary.com/do8vkz3mn/image/upload/v1742535292/axi3hvub7nshi80ebelu.jpg\",\n            \"publicId\": \"axi3hvub7nshi80ebelu\",\n            \"createdAt\": \"2025-03-21T05:34:52.924Z\",\n            \"updatedAt\": \"2025-03-21T05:34:52.924Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67dcf9ed81c83dde754a456d\",\n            \"url\": \"https://res.cloudinary.com/do8vkz3mn/image/upload/v1742535148/pyq6pywmw1h3u4gobgjc.jpg\",\n            \"publicId\": \"pyq6pywmw1h3u4gobgjc\",\n            \"createdAt\": \"2025-03-21T05:32:29.262Z\",\n            \"updatedAt\": \"2025-03-21T05:32:29.262Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"67dcf9ea81c83dde754a456b\",\n            \"url\": \"https://res.cloudinary.com/do8vkz3mn/image/upload/v1742535145/dxxe4ivxwwiyyecobkxm.jpg\",\n            \"publicId\": \"dxxe4ivxwwiyyecobkxm\",\n            \"createdAt\": \"2025-03-21T05:32:26.420Z\",\n            \"updatedAt\": \"2025-03-21T05:32:26.420Z\",\n            \"__v\": 0\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Image",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZGJlMTlkMDc1MTA1ZDEzYTdjYzFiNSIsInVzZXJuYW1lIjoiZW1pbHlqb25lcyIsImVtYWlsIjoiZW1pbHlqb25lc0BleGFtcGxlLmNvbSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0MjUzNzMwNywiZXhwIjoxNzQyNTM4MjA3fQ.TG3B6-znBowyOwIiG149-WUz5Qt3CxOBuS9AjqLDC0w",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/api/upload/delete/67dd035bd3ca2a34d50b723e",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["api", "upload", "delete", "67dd035bd3ca2a34d50b723e"]
+            }
+          },
+          "response": [
+            {
+              "name": "Delete Image",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:3000/api/upload/delete/67dd035bd3ca2a34d50b723e",
+                  "protocol": "http",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "upload", "delete", "67dd035bd3ca2a34d50b723e"]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "55"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"37-aixXnJP33LhesYdvurb4aHm64z4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 21 Mar 2025 06:13:46 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": true,\n    \"message\": \"Image deleted successfully\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

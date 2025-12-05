@@ -1,4 +1,4 @@
-const products = require("../data/product");
+const products = require('../data/product');
 
 const resolvers = {
   Query: {
@@ -24,17 +24,17 @@ const resolvers = {
       products.splice(index, 1);
       return true;
     },
-    updateProduct : (_, { id , ...updates }) => {
+    updateProduct: (_, { id, ...updates }) => {
       const index = products.findIndex((item) => item.id == id);
       if (index === -1) return null;
-      const updateProduct = { 
+      const updateProduct = {
         ...products[index],
-       ...updates
-      }
+        ...updates,
+      };
 
       products[index] = updateProduct;
       return updateProduct;
-    }
+    },
   },
 };
 

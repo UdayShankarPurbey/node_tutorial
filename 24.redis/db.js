@@ -1,19 +1,16 @@
-
-const redis = require("redis");
+const redis = require('redis');
 
 const client = redis.createClient({
-  host: "localhost",
+  host: 'localhost',
   port: 6379,
 });
 
-client.on("error", (error) =>
-  console.log("Redis Client Error Occured !", error)
-);
+client.on('error', (error) => console.log('Redis Client Error Occured !', error));
 
 async function redisDataStructure() {
   try {
     await client.connect();
-    //strings --> set , get , mSet , mGet 
+    //strings --> set , get , mSet , mGet
 
     // await client.set("User:name", "John Doe");
     // console.log(await client.get("User:name"));
@@ -21,14 +18,12 @@ async function redisDataStructure() {
     // await client.mSet(["User:name","John Doe","User:email","john.doe1@example.com","User:age","25"]);
     // console.log(await client.mGet(["User:name", "User:email", "User:age"]));
 
-
     // await client.mSet({
     //   "User:name": "Uday",
     //   "User:email": "uday@example.com",
     //   "User:age": "21",
     // });
     // console.log(await client.mGet(["User:name", "User:email", "User:age"]));
-
 
     //list --> rPush , rPop , lPush , lPop , lRange
 
@@ -40,7 +35,6 @@ async function redisDataStructure() {
 
     // console.log("RPUSH : ",await client.rPush("notes", "Note 4"));
     // console.log("LRANGE : ",await client.lRange("notes", 0, -1));
-
 
     //sets  --> sAdd , sCard , sMembers , sRemove , sIsMember
     // await client.sAdd("colors", ["Red", "Green", "Blue"]);
@@ -86,15 +80,11 @@ async function redisDataStructure() {
     // console.log("HVALS : ",await client.hVals("user"));
     // console.log("HEXISTS : ",await client.hExists("user", "name"));
     // console.log("HDEL : ",await client.hDel("user", "email"));
-    
-
-    
   } catch (error) {
     console.error(error);
   } finally {
     client.quit();
   }
-  
 }
 
 redisDataStructure();

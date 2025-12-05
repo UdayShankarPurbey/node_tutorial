@@ -1,30 +1,23 @@
-console.log("Hello Node js from typescript!");
+console.log('Hello Node js from typescript!');
 
 function getName(name: string): string {
   return name;
 }
 
-console.log(getName("Uday Kumar Purbey"));
+console.log(getName('Uday Kumar Purbey'));
 
 let isDone: boolean = false;
 
 let num: number = 0;
 
-let myString: string = "Hello World!";
+let myString: string = 'Hello World!';
 
-let fruitNames: string[] = [
-  "Mango",
-  "Papaya",
-  "Guava",
-  "Orange",
-  "Grapes",
-  "Apple",
-];
+let fruitNames: string[] = ['Mango', 'Papaya', 'Guava', 'Orange', 'Grapes', 'Apple'];
 
 let rollNumbers: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 let random: any = 4;
-random = "random";
+random = 'random';
 random = false;
 
 let val1: undefined = undefined;
@@ -39,7 +32,7 @@ enum color {
 
 let myColor: color = color.RED;
 
-let valueasStringOrNumber: (string | number)[] = ["0", "1", "2", 3, 4, 5];
+let valueasStringOrNumber: (string | number)[] = ['0', '1', '2', 3, 4, 5];
 
 // interface
 
@@ -51,13 +44,13 @@ interface Person {
 }
 
 let person: Person = {
-  name: "Uday",
+  name: 'Uday',
   age: 30,
-  email: "uday@example.com",
+  email: 'uday@example.com',
   createdAt: new Date(),
 };
 
-//type 
+//type
 type Product = {
   id: number;
   name: string;
@@ -66,12 +59,12 @@ type Product = {
   description?: string;
 };
 
-const product1 : Product = {
+const product1: Product = {
   id: 1,
-  name: "Laptop",
+  name: 'Laptop',
   price: 10000,
   stock: 100,
-}
+};
 
 // function with type annotion
 
@@ -79,7 +72,7 @@ function greet(name: string): string {
   return `Hello, ${name}!`;
 }
 
-console.log(greet("Uday"));
+console.log(greet('Uday'));
 
 // type annotion with arrow function
 
@@ -89,11 +82,10 @@ const add = (a: number, b: number): number => {
 
 console.log(add(5, 10));
 
-
-//function with optional property 
+//function with optional property
 
 function getPersonDetails(person: { name: string; age?: number }): string {
-  return `Name: ${person.name}, Age: ${person.age || "Unknown"}`;
+  return `Name: ${person.name}, Age: ${person.age || 'Unknown'}`;
 }
 
-console.log(getPersonDetails({ name: "Uday" }));
+console.log(getPersonDetails({ name: 'Uday' }));
