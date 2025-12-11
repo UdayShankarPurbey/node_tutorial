@@ -1,3 +1,42 @@
 {"level":"info","message":"Api gateway is running on port http://localhost:3000","service":"api-gateway","timestamp":"2025-12-05T05:43:44.630Z"}
 {"level":"info","message":"Identity service url : http://localhost:3001/","service":"api-gateway","timestamp":"2025-12-05T05:43:44.632Z"}
 {"level":"info","message":"Post service url: http://localhost:3002/","service":"api-gateway","timestamp":"2025-12-05T05:43:44.632Z"}
+{"level":"info","message":"Received POST request for /v1/auth/register","service":"api-gateway","timestamp":"2025-12-05T05:53:17.500Z"}
+{"level":"info","message":"Request body: {\"username\":\"Amit Kumar\",\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"api-gateway","timestamp":"2025-12-05T05:53:17.500Z"}
+{"level":"info","message":"Responsen Received from identity service: 400","service":"api-gateway","timestamp":"2025-12-05T05:53:17.524Z"}
+{"level":"info","message":"Received POST request for /v1/auth/register","service":"api-gateway","timestamp":"2025-12-05T05:53:23.723Z"}
+{"level":"info","message":"Request body: {\"username\":\"Amit Kumar\",\"email\":\"amit@amit1.com\",\"password\":\"TEST@123test\"}","service":"api-gateway","timestamp":"2025-12-05T05:53:23.723Z"}
+{"level":"info","message":"Responsen Received from identity service: 400","service":"api-gateway","timestamp":"2025-12-05T05:53:23.729Z"}
+{"level":"info","message":"Received POST request for /v1/auth/register","service":"api-gateway","timestamp":"2025-12-05T05:53:31.261Z"}
+{"level":"info","message":"Request body: {\"username\":\"Amit Kumar 1\",\"email\":\"amit@amit1.com\",\"password\":\"TEST@123test\"}","service":"api-gateway","timestamp":"2025-12-05T05:53:31.262Z"}
+{"level":"info","message":"Responsen Received from identity service: 201","service":"api-gateway","timestamp":"2025-12-05T05:53:31.313Z"}
+{"level":"info","message":"Received POST request for /v1/auth/register","service":"api-gateway","timestamp":"2025-12-05T05:55:47.838Z"}
+{"level":"info","message":"Request body: {\"username\":\"Amit Kumar 1\",\"email\":\"amit@amit1.com\",\"password\":\"TEST@123test\"}","service":"api-gateway","timestamp":"2025-12-05T05:55:47.838Z"}
+{"level":"info","message":"Responsen Received from identity service: 400","service":"api-gateway","timestamp":"2025-12-05T05:55:47.844Z"}
+{"level":"info","message":"Received POST request for /v1/auth/login","service":"api-gateway","timestamp":"2025-12-05T06:45:40.573Z"}
+{"level":"info","message":"Request body: {\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"api-gateway","timestamp":"2025-12-05T06:45:40.573Z"}
+{"level":"info","message":"Responsen Received from identity service: 200","service":"api-gateway","timestamp":"2025-12-05T06:45:40.627Z"}
+{"level":"info","message":"Received POST request for /v1/auth/login","service":"api-gateway","timestamp":"2025-12-05T06:46:06.985Z"}
+{"level":"info","message":"Request body: {\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"api-gateway","timestamp":"2025-12-05T06:46:06.986Z"}
+{"level":"info","message":"Responsen Received from identity service: 200","service":"api-gateway","timestamp":"2025-12-05T06:46:07.042Z"}
+{"level":"info","message":"Received POST request for /v1/auth/login","service":"api-gateway","timestamp":"2025-12-05T06:46:08.028Z"}
+{"level":"info","message":"Request body: {\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"api-gateway","timestamp":"2025-12-05T06:46:08.028Z"}
+{"level":"info","message":"Responsen Received from identity service: 200","service":"api-gateway","timestamp":"2025-12-05T06:46:08.081Z"}
+{"level":"info","message":"Received POST request for /v1/auth/login","service":"api-gateway","timestamp":"2025-12-05T06:46:08.377Z"}
+{"level":"info","message":"Request body: {\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"api-gateway","timestamp":"2025-12-05T06:46:08.377Z"}
+{"level":"info","message":"Responsen Received from identity service: 200","service":"api-gateway","timestamp":"2025-12-05T06:46:08.429Z"}
+{"level":"info","message":"Received POST request for /v1/auth/login","service":"api-gateway","timestamp":"2025-12-05T06:46:08.716Z"}
+{"level":"info","message":"Request body: {\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"api-gateway","timestamp":"2025-12-05T06:46:08.716Z"}
+{"level":"info","message":"Responsen Received from identity service: 200","service":"api-gateway","timestamp":"2025-12-05T06:46:08.769Z"}
+{"level":"info","message":"Received POST request for /v1/auth/login","service":"api-gateway","timestamp":"2025-12-05T06:46:45.604Z"}
+{"level":"info","message":"Request body: {\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"api-gateway","timestamp":"2025-12-05T06:46:45.604Z"}
+{"level":"info","message":"Responsen Received from identity service: 200","service":"api-gateway","timestamp":"2025-12-05T06:46:45.656Z"}
+{"level":"info","message":"Received POST request for /v1/auth/login","service":"api-gateway","timestamp":"2025-12-05T06:47:26.674Z"}
+{"level":"info","message":"Request body: {\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"api-gateway","timestamp":"2025-12-05T06:47:26.674Z"}
+{"level":"info","message":"Responsen Received from identity service: 200","service":"api-gateway","timestamp":"2025-12-05T06:47:26.726Z"}
+{"level":"info","message":"Received POST request for /v1/auth/login","service":"api-gateway","timestamp":"2025-12-05T06:47:45.618Z"}
+{"level":"info","message":"Request body: {\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"api-gateway","timestamp":"2025-12-05T06:47:45.618Z"}
+{"level":"info","message":"Responsen Received from identity service: 200","service":"api-gateway","timestamp":"2025-12-05T06:47:45.672Z"}
+{"level":"info","message":"Received GET request for /v1/posts/all-posts","service":"api-gateway","timestamp":"2025-12-05T06:47:55.211Z"}
+{"level":"info","message":"Request body: undefined","service":"api-gateway","timestamp":"2025-12-05T06:47:55.211Z"}
+{"level":"info","message":"Responsen Received from post service: 200","service":"api-gateway","timestamp":"2025-12-05T06:47:55.245Z"}

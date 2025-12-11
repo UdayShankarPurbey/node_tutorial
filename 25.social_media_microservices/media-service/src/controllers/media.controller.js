@@ -1,5 +1,6 @@
 const uploadMediaTocloudinary = require('../utils/cloudinary');
 const logger = require('../utils/logger');
+const Media = require('../models/media');
 
 const uploadMedia = async (req, res) => {
   logger.info('Upload media...');
@@ -18,6 +19,27 @@ const uploadMedia = async (req, res) => {
 
     logger.info(`Cloudinary Upload successfully. Public Id : ${cloudinaryUploadResult.public_id}`);
 
-    // const newlyCreatedMedia = await
-  } catch (error) {}
+    const newlyCreatedMedia = await Media.create({
+      publicId: cloudinaryUploadResult.public_id,
+      originalName,
+      mimeType,
+      url: cloudinaryUploadResult.secure_url,
+      userId,
+    });
+
+    res.status(200).json({
+      success: true,
+      message: 'Media uploaded successfully',
+      data: newlyCreatedMedia,
+    });
+  } catch (error) {
+    logger.error('Error While Uploading Media', error);
+    res.status(500).json({
+      success: false,
+      message: 'Error While Uploading Media',
+      error: error.message,
+    });
+  }
 };
+
+module.exports = { uploadMedia };
