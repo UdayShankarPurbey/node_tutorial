@@ -1,10 +1,10 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const postSchema = new mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+      ref: 'User',
       required: true,
     },
     content: {
@@ -23,10 +23,10 @@ const postSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
-postSchema.index({ content: "text" });
+postSchema.index({ content: 'text' });
 
-const Post = mongoose.model("Post", postSchema);
+const Post = mongoose.model('Post', postSchema);
 module.exports = Post;

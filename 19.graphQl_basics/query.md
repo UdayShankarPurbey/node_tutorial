@@ -1,9 +1,9 @@
 # GraphQl Query
 
 ## Get All Products
-```graphql 
+
+```graphql
 query Products {
-  
   products {
     id
     category
@@ -13,8 +13,10 @@ query Products {
   }
 }
 ```
-## Get Product By Id 
-```graphql 
+
+## Get Product By Id
+
+```graphql
 query {
   product(id: "4") {
     id
@@ -27,31 +29,34 @@ query {
 ```
 
 ## Add Product
-```graphql 
-mutation{
+
+```graphql
+mutation {
   createProduct(title: "test", category: "testing", price: 45.23, inStock: false) {
-    title ,
-    category,
-    price,
-    inStock,
+    title
+    category
+    price
+    inStock
   }
 }
 ```
 
 ## Delete Product
-```graphql 
+
+```graphql
 mutation {
-  deleteProduct(id: "4") 
+  deleteProduct(id: "4")
 }
 ```
 
 ## Update Product
-```graphql 
+
+```graphql
 mutation {
-  updateProduct(id: "4" , category: "updates") {
-    title,
-    category,
-    price,
+  updateProduct(id: "4", category: "updates") {
+    title
+    category
+    price
     inStock
   }
 }

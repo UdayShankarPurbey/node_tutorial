@@ -1,7 +1,8 @@
 # GraphQl Query
 
 ## Get All Products
-```graphql 
+
+```graphql
 query Products {
   products {
     id
@@ -12,8 +13,10 @@ query Products {
   }
 }
 ```
-## Get Product By Id 
-```graphql 
+
+## Get Product By Id
+
+```graphql
 query {
   product(id: "67dd5463df6de7402302c16e") {
     id
@@ -26,31 +29,34 @@ query {
 ```
 
 ## Add Product
-```graphql 
-mutation{
+
+```graphql
+mutation {
   createProduct(title: "test", category: "testing", price: 45.23, inStock: false) {
-    title ,
-    category,
-    price,
-    inStock,
+    title
+    category
+    price
+    inStock
   }
 }
 ```
 
 ## Delete Product
-```graphql 
+
+```graphql
 mutation {
-  deleteProduct(id: "67dd5463df6de7402302c16e") 
+  deleteProduct(id: "67dd5463df6de7402302c16e")
 }
 ```
 
 ## Update Product
-```graphql 
+
+```graphql
 mutation {
-  updateProduct(id: "67dd5449df6de7402302c16c" , category: "check_testing") {
-    title,
-    category,
-    price,
+  updateProduct(id: "67dd5449df6de7402302c16c", category: "check_testing") {
+    title
+    category
+    price
     inStock
   }
 }

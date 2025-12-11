@@ -8,5 +8,4 @@ const validateCreatePost = (data) => {
   return schema.validate(data);
 };
 
-
-module.exports = { validateCreatePost};
+module.exports = { validateCreatePost };

@@ -1,13 +1,11 @@
-const redis = require("redis");
+const redis = require('redis');
 
 const client = redis.createClient({
-  host: "localhost",
+  host: 'localhost',
   port: 6379,
 });
 
-client.on("error", (error) =>
-  console.log("Redis Client Error Occured !", error)
-);
+client.on('error', (error) => console.log('Redis Client Error Occured !', error));
 
 async function testAdditionalFeatures() {
   try {
@@ -53,7 +51,6 @@ async function testAdditionalFeatures() {
     // pipeline.get('transaction:2');
     // pipeline.get('transaction:3');
 
-
     // const pipelineResult = await pipeline.exec();
     // console.log(pipelineResult);
 
@@ -67,7 +64,6 @@ async function testAdditionalFeatures() {
     // const pipeline1Result =  await pipeline1.exec();
     // console.log(pipeline1Result);
 
-
     // const dummyExmaple = client.multi()
     // dummyExmaple.decrBy('acc:123', 100);
     // dummyExmaple.incrBy('acc:456', 100);
@@ -75,18 +71,16 @@ async function testAdditionalFeatures() {
     // const finalResult = await dummyExmaple.exec();
     // console.log(finalResult);
 
-
     // const cartExample = client.multi();
     // cartExample.hIncrBy('cart:123','item_count', 1);
     // cartExample.hIncrBy('cart:123','total_price', 100);
     // const cartResult = await cartExample.exec();
     // console.log(cartResult);
 
-
     console.log('Performance Test');
     console.time('Without Pipelining');
 
-    for(let i = 0 ; i<=1000; i++){
+    for (let i = 0; i <= 1000; i++) {
       await client.set(`user:${i}:action`, `user_value_${Math.random(i)}`);
     }
 
@@ -94,14 +88,12 @@ async function testAdditionalFeatures() {
     console.time('With Pipelining');
 
     const testPipeline = client.multi();
-    for(let i = 0 ; i<=1000; i++){
+    for (let i = 0; i <= 1000; i++) {
       testPipeline.set(`user_pipeline:${i}:action`, `user_pipeline_value_${Math.random(i)}`);
     }
-    
+
     await testPipeline.exec();
     console.timeEnd('With Pipelining');
-
-
   } catch (error) {
     console.error(error);
   } finally {

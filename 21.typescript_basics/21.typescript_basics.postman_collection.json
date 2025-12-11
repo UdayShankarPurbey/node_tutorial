@@ -1,182 +1,164 @@
 {
-	"info": {
-		"_postman_id": "15990b47-d8dd-429a-85fb-b9d7833146a3",
-		"name": "21.typescript_basics",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "30996747"
-	},
-	"item": [
-		{
-			"name": "User Data",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"id\" : 1,\r\n    \"name\" : \"uday\",\r\n    \"email\" : \"u@u.com\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						""
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "User Data",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"id\" : 1,\r\n    \"name\" : \"uday\",\r\n    \"email\" : \"u@u.com\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "http://localhost:3000/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								""
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "80"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"50-ydyoUcHt8MSlBvGTJiNlnyN12g8\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 24 Mar 2025 11:53:01 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"name\": \"uday\",\n        \"email\": \"u@u.com\"\n    }\n}"
-				}
-			]
-		},
-		{
-			"name": "user Id",
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/user/2",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"user",
-						"2"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "user Id",
-					"originalRequest": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:3000/user/2",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "3000",
-							"path": [
-								"user",
-								"2"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "57"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"39-TxBj0CkwxiHh+aA9di+Qu9P8nWs\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 24 Mar 2025 11:56:26 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"message\": \"User fetched successfully\",\n    \"data\": {\n        \"id\": \"2\"\n    }\n}"
-				}
-			]
-		}
-	]
+  "info": {
+    "_postman_id": "15990b47-d8dd-429a-85fb-b9d7833146a3",
+    "name": "21.typescript_basics",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "30996747"
+  },
+  "item": [
+    {
+      "name": "User Data",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\" : 1,\r\n    \"name\" : \"uday\",\r\n    \"email\" : \"u@u.com\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": [""]
+        }
+      },
+      "response": [
+        {
+          "name": "User Data",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\" : 1,\r\n    \"name\" : \"uday\",\r\n    \"email\" : \"u@u.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:3000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": [""]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "80"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"50-ydyoUcHt8MSlBvGTJiNlnyN12g8\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 24 Mar 2025 11:53:01 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"User created successfully\",\n    \"data\": {\n        \"name\": \"uday\",\n        \"email\": \"u@u.com\"\n    }\n}"
+        }
+      ]
+    },
+    {
+      "name": "user Id",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/user/2",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["user", "2"]
+        }
+      },
+      "response": [
+        {
+          "name": "user Id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:3000/user/2",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "3000",
+              "path": ["user", "2"]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "X-Powered-By",
+              "value": "Express"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json; charset=utf-8"
+            },
+            {
+              "key": "Content-Length",
+              "value": "57"
+            },
+            {
+              "key": "ETag",
+              "value": "W/\"39-TxBj0CkwxiHh+aA9di+Qu9P8nWs\""
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 24 Mar 2025 11:56:26 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=5"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"User fetched successfully\",\n    \"data\": {\n        \"id\": \"2\"\n    }\n}"
+        }
+      ]
+    }
+  ]
 }

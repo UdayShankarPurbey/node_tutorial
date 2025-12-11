@@ -1,16 +1,16 @@
-require("dotenv").configDotenv();
-const mongoose = require("mongoose");
-const logger = require("./utils/logger");
-const express = require("express");
-const helmet = require("helmet");
-const cors = require("cors");
-const { RateLimiterRedis } = require("rate-limiter-flexible");
-const { Redis } = require("ioredis");
-const { rateLimit } = require("express-rate-limit");
-const { RedisStore } = require("rate-limit-redis");
-const identityRouter = require("./routes/identity-service");
-const errorHandler = require("./middlewares/errorHandler");
-const { clearLogFiles } = require("./utils/clearLog");
+require('dotenv').configDotenv();
+const mongoose = require('mongoose');
+const logger = require('./utils/logger');
+const express = require('express');
+const helmet = require('helmet');
+const cors = require('cors');
+const { RateLimiterRedis } = require('rate-limiter-flexible');
+const { Redis } = require('ioredis');
+const { rateLimit } = require('express-rate-limit');
+const { RedisStore } = require('rate-limit-redis');
+const identityRouter = require('./routes/identity-service');
+const errorHandler = require('./middlewares/errorHandler');
+const { clearLogFiles } = require('./utils/clearLog');
 
 const app = express();
 const port = process.env.PORT || 3001;
@@ -18,8 +18,8 @@ const port = process.env.PORT || 3001;
 //connect to mongodb
 mongoose
   .connect(process.env.MONGODB_URI)
-  .then(() => logger.info("Connected to MongoDB"))
-  .catch((err) => logger.error("MongoDB connection failed", err));
+  .then(() => logger.info('Connected to MongoDB'))
+  .catch((err) => logger.error('MongoDB connection failed', err));
 
 //connect to redis
 const redisClient = new Redis(process.env.REDIS_URL);
@@ -40,9 +40,9 @@ app.use((req, res, next) => {
 // ddos protection and rate limiter
 const limiter = new RateLimiterRedis({
   storeClient: redisClient,
-  keyPrefix: "middleware",
-  points: 10,
-  duration: 1,
+  keyPrefix: 'middleware',
+  points: 10, // maximum no of request can i ip can make in duraion
+  duration: 1, // duration in seconds
 });
 
 app.use((req, res, next) => {
@@ -52,10 +52,10 @@ app.use((req, res, next) => {
       next();
     })
     .catch(() => {
-      logger.warn("Rate limit exceeded");
+      logger.warn('Rate limit exceeded');
       res.status(429).json({
         success: false,
-        message: "Rate limit exceeded",
+        message: 'Rate limit exceeded',
       });
     });
 });
@@ -67,10 +67,10 @@ const sensetiveEndPointLimiter = rateLimit({
   legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
   // store: ... , // Redis, Memcached, etc. See below.
   handler: (req, res) => {
-    logger.warn("Sensetive endpoint rate limit exceeded for IP", req.ip);
+    logger.warn('Sensetive endpoint rate limit exceeded for IP', req.ip);
     res.status(429).json({
       success: false,
-      message: "Rate limit exceeded",
+      message: 'Rate limit exceeded',
     });
   },
   // Redis store configuration
@@ -80,10 +80,10 @@ const sensetiveEndPointLimiter = rateLimit({
 });
 
 // applying `sensetiveEndPointLimiter` to a specific route
-app.use("/api/auth/register", sensetiveEndPointLimiter);
+app.use('/api/auth/register', sensetiveEndPointLimiter);
 
 // routes
-app.use("/api/auth", identityRouter);
+app.use('/api/auth', identityRouter);
 
 //error handler
 app.use(errorHandler);
@@ -92,6 +92,6 @@ app.listen(port, () => {
   logger.info(`Identity service is running on port ${port}`);
 });
 
-process.on("unhandledRejection", (reason, promise) => {
-  logger.error("Unhandled Rejection at:", promise, "reason:", reason);
+process.on('unhandledRejection', (reason, promise) => {
+  logger.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });

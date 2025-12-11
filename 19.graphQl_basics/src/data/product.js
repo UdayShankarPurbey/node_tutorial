@@ -1,7 +1,7 @@
 const products = [
-  { id: "1", title: "Wireless Mouse", category: "Electronics", price: 25.99, inStock: true },
-  { id: "2", title: "Bluetooth Headphones", category: "Electronics", price: 79.99, inStock: false },
-  { id: "3", title: "Gaming Keyboard", category: "Electronics", price: 129.99, inStock: true },
+  { id: '1', title: 'Wireless Mouse', category: 'Electronics', price: 25.99, inStock: true },
+  { id: '2', title: 'Bluetooth Headphones', category: 'Electronics', price: 79.99, inStock: false },
+  { id: '3', title: 'Gaming Keyboard', category: 'Electronics', price: 129.99, inStock: true },
   // { id: "4", title: "Leather Wallet", category: "Accessories", price: 45.50, inStock: true },
   // { id: "5", title: "Coffee Maker", category: "Home Appliances", price: 99.99, inStock: true },
   // { id: "6", title: "Smartphone", category: "Electronics", price: 699.99, inStock: false },
@@ -101,5 +101,4 @@ const products = [
   // { id: "100", title: "Compact Refrigerator", category: "Home Appliances", price: 189.99, inStock: true }
 ];
 
-
-module.exports = products
+module.exports = products;

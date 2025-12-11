@@ -1,19 +1,22 @@
 const jwt = require('jsonwebtoken');
 
-const authMiddleware = (req , res , next) => {
-  const authToken = req.headers?.authorization?.replaceAll('Bearer ','')
+const authMiddleware = (req, res, next) => {
+  const authToken = req.headers?.authorization?.replaceAll('Bearer ', '');
   if (!authToken) {
-    return res.status(401).json({ success : false , message: 'Missing or invalid authentication token' });
+    return res
+      .status(401)
+      .json({ success: false, message: 'Missing or invalid authentication token' });
   }
 
   try {
-    const decodedToken = jwt.verify(authToken , process.env.JWT_SECRET_KEY );
+    const decodedToken = jwt.verify(authToken, process.env.JWT_SECRET_KEY);
     req.user = decodedToken;
-    next();    
+    next();
   } catch (error) {
-    console.error("Error: " + error);
-    return res.status(401).json({ success : false , message: 'Missing or invalid authentication token' });
-
+    console.error('Error: ' + error);
+    return res
+      .status(401)
+      .json({ success: false, message: 'Missing or invalid authentication token' });
   }
 };
 

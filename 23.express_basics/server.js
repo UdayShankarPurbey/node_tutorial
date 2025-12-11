@@ -1,16 +1,14 @@
-const { configDotenv } = require("dotenv");
+const { configDotenv } = require('dotenv');
 
-configDotenv({path : './.env'});
-
+configDotenv({ path: './.env' });
 
 const express = require('express');
-const confugureCors = require("./config/corsConfig");
-const { requestLogger, addTimeStamps } = require("./middlewares/customMiddlewares");
-const { globalErrorHandler } = require("./middlewares/errorHandler");
-const { urlVersioning } = require("./middlewares/apiVersioning");
-const createBasicRateLimiter = require("./middlewares/rateLimitting");
+const confugureCors = require('./config/corsConfig');
+const { requestLogger, addTimeStamps } = require('./middlewares/customMiddlewares');
+const { globalErrorHandler } = require('./middlewares/errorHandler');
+const { urlVersioning } = require('./middlewares/apiVersioning');
+const createBasicRateLimiter = require('./middlewares/rateLimitting');
 const itemRoutes = require('./routes/item.routes');
-
 
 const app = express();
 
@@ -20,12 +18,11 @@ app.use(requestLogger);
 app.use(addTimeStamps);
 
 app.use(confugureCors()); //configuring cors
-app.use(createBasicRateLimiter(15,1*60*1000)); // 15 request in 1 minutes
+app.use(createBasicRateLimiter(15, 1 * 60 * 1000)); // 15 request in 1 minutes
 app.use(express.json());
 
-app.use( urlVersioning("v1"));
+app.use(urlVersioning('v1'));
 app.use('/api/v1', itemRoutes);
-
 
 app.use(globalErrorHandler);
 

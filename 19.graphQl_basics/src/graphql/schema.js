@@ -1,6 +1,5 @@
 const { gql } = require('graphql-tag');
 
-
 // string , int , float , boolean , id --> unique identifier
 // ! -> for not null values
 
@@ -8,31 +7,21 @@ const typeDefs = gql`
   type Product {
     id: ID!
     title: String!
-    category : String!
+    category: String!
     price: Float!
     inStock: Boolean!
   }
 
-
   type Query {
-    products : [Product !]!
-    product(id : ID!) : Product
+    products: [Product!]!
+    product(id: ID!): Product
   }
 
   type Mutation {
-    createProduct ( 
-      title : String! 
-      category : String!
-      price : Float!
-      inStock : Boolean!
-    ) : Product
-     deleteProduct ( id : ID!) : Boolean
-     updateProduct(id : ID! title: String
-    category : String
-    price: Float
-    inStock: Boolean ) : Product
+    createProduct(title: String!, category: String!, price: Float!, inStock: Boolean!): Product
+    deleteProduct(id: ID!): Boolean
+    updateProduct(id: ID!, title: String, category: String, price: Float, inStock: Boolean): Product
   }
-   
 `;
 
 module.exports = typeDefs;

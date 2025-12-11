@@ -1,22 +1,2 @@
-{"level":"info","message":"Post service is running on port 3002","service":"post-service","timestamp":"2025-06-23T11:36:10.913Z"}
-{"level":"info","message":"Connected to MongoDB","service":"post-service","timestamp":"2025-06-23T11:36:10.924Z"}
-{"level":"info","message":"Received GET request for /api/posts/all-posts","service":"post-service","timestamp":"2025-06-23T11:44:36.800Z"}
-{"level":"info","message":"Request body: {}","service":"post-service","timestamp":"2025-06-23T11:44:36.800Z"}
-{"level":"info","message":"Received GET request for /api/posts/all-posts","service":"post-service","timestamp":"2025-06-23T11:44:38.067Z"}
-{"level":"info","message":"Request body: {}","service":"post-service","timestamp":"2025-06-23T11:44:38.068Z"}
-{"0":"p","1":"o","2":"s","3":"t","4":"s","5":":","6":"1","7":":","8":"1","9":"0","level":"info","message":"Fetched from cache","service":"post-service","timestamp":"2025-06-23T11:44:38.069Z"}
-{"level":"info","message":"Received GET request for /api/posts/all-posts","service":"post-service","timestamp":"2025-06-23T11:44:38.952Z"}
-{"level":"info","message":"Request body: {}","service":"post-service","timestamp":"2025-06-23T11:44:38.952Z"}
-{"0":"p","1":"o","2":"s","3":"t","4":"s","5":":","6":"1","7":":","8":"1","9":"0","level":"info","message":"Fetched from cache","service":"post-service","timestamp":"2025-06-23T11:44:38.953Z"}
-{"level":"info","message":"Received GET request for /api/posts/all-posts","service":"post-service","timestamp":"2025-06-23T11:44:39.642Z"}
-{"level":"info","message":"Request body: {}","service":"post-service","timestamp":"2025-06-23T11:44:39.643Z"}
-{"0":"p","1":"o","2":"s","3":"t","4":"s","5":":","6":"1","7":":","8":"1","9":"0","level":"info","message":"Fetched from cache","service":"post-service","timestamp":"2025-06-23T11:44:39.643Z"}
-{"level":"info","message":"Received GET request for /api/posts/all-posts","service":"post-service","timestamp":"2025-06-23T11:44:40.362Z"}
-{"level":"info","message":"Request body: {}","service":"post-service","timestamp":"2025-06-23T11:44:40.363Z"}
-{"0":"p","1":"o","2":"s","3":"t","4":"s","5":":","6":"1","7":":","8":"1","9":"0","level":"info","message":"Fetched from cache","service":"post-service","timestamp":"2025-06-23T11:44:40.364Z"}
-{"level":"info","message":"Received GET request for /api/posts/all-posts","service":"post-service","timestamp":"2025-06-23T11:44:41.195Z"}
-{"level":"info","message":"Request body: {}","service":"post-service","timestamp":"2025-06-23T11:44:41.195Z"}
-{"0":"p","1":"o","2":"s","3":"t","4":"s","5":":","6":"1","7":":","8":"1","9":"0","level":"info","message":"Fetched from cache","service":"post-service","timestamp":"2025-06-23T11:44:41.196Z"}
-{"level":"info","message":"Received GET request for /api/posts/all-posts","service":"post-service","timestamp":"2025-06-23T11:44:41.773Z"}
-{"level":"info","message":"Request body: {}","service":"post-service","timestamp":"2025-06-23T11:44:41.773Z"}
-{"0":"p","1":"o","2":"s","3":"t","4":"s","5":":","6":"1","7":":","8":"1","9":"0","level":"info","message":"Fetched from cache","service":"post-service","timestamp":"2025-06-23T11:44:41.774Z"}
+{"level":"info","message":"Post service is running on port 3002","service":"post-service","timestamp":"2025-12-05T14:04:59.429Z"}
+{"level":"info","message":"Connected to MongoDB","service":"post-service","timestamp":"2025-12-05T14:04:59.440Z"}

@@ -2,7 +2,7 @@ class ApiError extends Error {
   constructor(message, statusCode) {
     super(message);
     this.statusCode = statusCode;
-    this.name = "APIError"; // set the error type to API error.
+    this.name = 'APIError'; // set the error type to API error.
   }
 }
 
@@ -15,13 +15,13 @@ const globalErrorHandler = (err, req, res, next) => {
 
   if (err instanceof ApiError) {
     return res.status(err.statusCode).json({
-      status: "Error",
+      status: 'Error',
       message: err.message,
     });
   } else {
     return res.status(500).json({
-      status: "error",
-      message: "An Unexpected Error Occur",
+      status: 'error',
+      message: 'An Unexpected Error Occur',
     });
   }
 };
