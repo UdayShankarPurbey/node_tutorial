@@ -1,2 +1,21 @@
-{"level":"info","message":"Identity service is running on port 3001","service":"identity-service","timestamp":"2025-12-05T14:04:59.457Z"}
-{"level":"info","message":"Connected to MongoDB","service":"identity-service","timestamp":"2025-12-05T14:04:59.467Z"}
+{"level":"info","message":"Identity service is running on port 3001","service":"identity-service","timestamp":"2025-12-11T10:42:04.875Z"}
+{"level":"info","message":"Connected to MongoDB","service":"identity-service","timestamp":"2025-12-11T10:42:04.905Z"}
+{"level":"info","message":"Received POST request for /api/auth/login","service":"identity-service","timestamp":"2025-12-11T10:49:53.098Z"}
+{"level":"info","message":"Request body: {\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"identity-service","timestamp":"2025-12-11T10:49:53.098Z"}
+{"level":"info","message":"Login User...","service":"identity-service","timestamp":"2025-12-11T10:49:53.102Z"}
+{"level":"warn","message":"User not found","service":"identity-service","timestamp":"2025-12-11T10:49:53.140Z"}
+{"level":"info","message":"Received POST request for /api/auth/register","service":"identity-service","timestamp":"2025-12-11T10:50:06.460Z"}
+{"level":"info","message":"Request body: {\"username\":\"Amit Kumar 1\",\"email\":\"amit@amit1.com\",\"password\":\"TEST@123test\"}","service":"identity-service","timestamp":"2025-12-11T10:50:06.461Z"}
+{"level":"info","message":"Register user","service":"identity-service","timestamp":"2025-12-11T10:50:06.463Z"}
+{"buffer":{"data":[105,58,161,222,72,68,165,65,195,174,42,103],"type":"Buffer"},"level":"info","message":"User created","service":"identity-service","timestamp":"2025-12-11T10:50:06.569Z"}
+{"level":"info","message":"Received POST request for /api/auth/login","service":"identity-service","timestamp":"2025-12-11T10:50:11.377Z"}
+{"level":"info","message":"Request body: {\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"identity-service","timestamp":"2025-12-11T10:50:11.377Z"}
+{"level":"info","message":"Login User...","service":"identity-service","timestamp":"2025-12-11T10:50:11.378Z"}
+{"level":"warn","message":"User not found","service":"identity-service","timestamp":"2025-12-11T10:50:11.381Z"}
+{"level":"info","message":"Received POST request for /api/auth/register","service":"identity-service","timestamp":"2025-12-11T10:50:30.306Z"}
+{"level":"info","message":"Request body: {\"username\":\"Amit Kumar\",\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"identity-service","timestamp":"2025-12-11T10:50:30.307Z"}
+{"level":"info","message":"Register user","service":"identity-service","timestamp":"2025-12-11T10:50:30.308Z"}
+{"buffer":{"data":[105,58,161,246,72,68,165,65,195,174,42,110],"type":"Buffer"},"level":"info","message":"User created","service":"identity-service","timestamp":"2025-12-11T10:50:30.384Z"}
+{"level":"info","message":"Received POST request for /api/auth/login","service":"identity-service","timestamp":"2025-12-11T10:50:37.011Z"}
+{"level":"info","message":"Request body: {\"email\":\"amit@amit.com\",\"password\":\"TEST@123test\"}","service":"identity-service","timestamp":"2025-12-11T10:50:37.012Z"}
+{"level":"info","message":"Login User...","service":"identity-service","timestamp":"2025-12-11T10:50:37.013Z"}
