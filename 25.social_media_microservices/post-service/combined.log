@@ -1,2 +1,0 @@
-{"level":"info","message":"Post service is running on port 3002","service":"post-service","timestamp":"2025-12-05T14:04:59.429Z"}
-{"level":"info","message":"Connected to MongoDB","service":"post-service","timestamp":"2025-12-05T14:04:59.440Z"}
